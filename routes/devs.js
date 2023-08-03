@@ -14,7 +14,7 @@ var devsCtrl = require('../controllers/devs')
 // GET devs
 router.get('/', devsCtrl.index);
 
-// router.get('/:id', devsCtrl.getOne)
+router.get('/:id', devsCtrl.show)
 
 
 module.exports = router;

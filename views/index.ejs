@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>*text*</p>
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+<h1>Welcome to the Developer Skills Tracker</h1>
+
+    <p>This tracker is used to keep up-to-date skill proficiency status of all your newly learned coding skills. </p>
+    <p>Keep this updated regularly with areas you feel need strengthing! </p>
+
+    <h5>Last Update: <%= time %></h5>
+
+<%- include('./PARTIALS/FOOTER') %>
