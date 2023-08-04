@@ -7,13 +7,51 @@
 </head>
 <body>
     <h1>Dustin's Current Skills:</h1>
-    <ul>
-        <% dustins.forEach(function(d) { %>
-           <p><li><a href='/devs/<%= d.skill%>'><%= d.skill%></a></li></p>
 
-        <!-- <li> <%= d.skill%>  --  <%=d.level%></li> -->
+    <ul>
+
+        <% dustins.forEach(function(d) { %>
+           <li>     
+            <a href='/devs/<%= d.skill%>'><%= d.skill%></a>
+            </li>
         <% }) %>
+
+        <% dustins.forEach(function(d) { %>
+            <li>
+                <form action="devs/<%=d.skill%>?_method=DELETE" class="delete-form" method="POST">
+                    <button trpe="submit">x</button></form>
+            </li>
+        <% }) %>
+
+
+<!-- TRIED WITH LINK TO SKILL FOLLOWED BY X - DELETES FROM BOTTOM UP
+        <% dustins.forEach(function(d) { %>
+            <li>
+                <a href='/devs/<%= d.skill%>'><%= d.skill%></a>
+            </li>
+            <li>
+                <form action="/devs/<%= d.skill %>?_method=DELETE"
+                  class="delete-form" method="POST">
+                 <button type="submit">x</button></form> 
+            </li>
+        <% }) %> -->
+        
+<!-- TRIED WITH X ON SAME <li> - X STILL IN SAME POSITION AS ONE ABOVE, AND STILL DELETING FROM BOTTOM UP
+        <% dustins.forEach(function(d) { %>
+            <li>
+                <a href='/devs/<%= d.skill%>'><%= d.skill%></a>
+                    
+                <form action="/devs/<%= d.skill %>?_method=DELETE"
+                  class="delete-form" method="POST">
+                 <button type="submit">x</button></form> 
+            </li>
+        <% }) %> -->
+
+
+        <li><a href="/devs/new">Add A New Skill 👨🏼‍🎓</a></li>
+    
     </ul>
+
 
 
 </body>

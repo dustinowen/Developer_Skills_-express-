@@ -1,6 +1,9 @@
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill,
+    create,
+    delete: deleteSkill
 }
 
 const Dev = require('../models/dev');
@@ -18,3 +21,16 @@ function show(req, res) {
     })
 }
 
+function newSkill(req, res){
+    res.render('devs/new', { title: 'New Skill'})
+}
+
+function create(req, res) { 
+    Dev.create(req.body)
+    res.redirect('/devs')
+}
+
+function deleteSkill (req, res) {
+    Dev.deleteOne(req.params.id)
+    res.redirect('/devs')
+}

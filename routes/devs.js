@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
 var devsCtrl = require('../controllers/devs')
 
@@ -12,9 +12,14 @@ var devsCtrl = require('../controllers/devs')
 
 
 // GET devs
-router.get('/', devsCtrl.index);
+router.get('/', devsCtrl.index)
+
+router.get('/new', devsCtrl.new)
 
 router.get('/:id', devsCtrl.show)
 
+router.post('/', devsCtrl.create)
 
-module.exports = router;
+router.delete('/:id', devsCtrl.delete)
+
+module.exports = router
